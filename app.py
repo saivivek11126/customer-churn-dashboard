@@ -4,14 +4,14 @@ import pickle
 import numpy as np
 
 # Load model
-with open(r"C:/Users/saivi/OneDrive/Desktop/vivek/ml project/model.pkl", "rb") as file:
+with open("model.pkl", "rb") as file:
     model = pickle.load(file)
 
 st.title("Customer Churn Prediction")
 
 # Load dataset for business metrics
 import pandas as pd
-df = pd.read_csv(r"C:/Users/saivi/OneDrive/Desktop/vivek/ml project/teleco-dataset.csv")
+df = pd.read_csv("teleco-dataset.csv")
 
 st.subheader("Customer Churn Distribution")
 churn_counts = df['Churn'].value_counts()
@@ -110,3 +110,4 @@ if st.button("Predict Churn"):
         st.error("Customer is likely to **churn** 😞")
     else:
         st.success("Customer is **not likely to churn** 🙂")
+
